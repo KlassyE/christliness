@@ -2,8 +2,8 @@
     RewriteEngine On
     RewriteBase /
 
-    # 1. FORCE the server to serve dist/index.html when asking for the root directory
-    DirectoryIndex dist/index.html
+    # 1. FORCE the server to look for index.php (our proxy) first!
+    DirectoryIndex index.php dist/index.html
 
     # 2. Redirect explicit requests for the source index.html to the dist version
     RewriteRule ^index\.html$ dist/index.html [L]
