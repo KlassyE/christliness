@@ -41,8 +41,8 @@ const Header = () => {
                 </Link>
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-                    <div className="mobile-toggle-wrapper">
-                        {/* Visible on mobile via CSS if needed, but here we keep it in nav for desktop or separate */}
+                    <div className="mobile-actions">
+                        <ThemeToggle />
                     </div>
 
                     <button
@@ -60,7 +60,8 @@ const Header = () => {
                         <li><Link to="/about" className={isActive('/about')} onClick={closeMenu}>ABOUT US</Link></li>
                         <li><Link to="/curriculum" className={isActive('/curriculum')} onClick={closeMenu}>CURRICULUM</Link></li>
                         <li><Link to="/contact" className={isActive('/contact')} onClick={closeMenu}>CONTACT</Link></li>
-                        <li><ThemeToggle /></li>
+                        {/* Theme Toggle hidden on mobile via CSS, shown here for desktop */}
+                        <li className="desktop-only"><ThemeToggle /></li>
                         <li><Link to="/contact" className="btn btn-secondary" style={{ padding: '8px 20px', fontSize: '0.9rem' }} onClick={closeMenu}>ADMISSIONS</Link></li>
                     </ul>
                 </nav>

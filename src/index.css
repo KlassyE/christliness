@@ -416,3 +416,166 @@ nav a.active {
         gap: 5px;
     }
 }
+
+/* --- Mobile Fixes & New Classes --- */
+
+/* Header & Nav */
+header {
+    /* Ensure header sits on top */
+    z-index: 10000;
+}
+
+.mobile-actions {
+    display: none;
+    /* Hidden on desktop */
+}
+
+/* Principal Section */
+.principal-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px;
+}
+
+.principal-image-wrapper {
+    flex: 1 1 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.principal-image {
+    border-radius: 50%;
+    border: 5px solid var(--accent-primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.principal-content {
+    flex: 2 1 400px;
+}
+
+/* Hero */
+.hero-content h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    /* Responsive font size */
+    margin-bottom: 20px;
+    color: var(--text-heading);
+    line-height: 1.1;
+}
+
+.hero-description {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* --- Mobile Queries (Max Width 768px) --- */
+@media (max-width: 768px) {
+
+    /* Header */
+    header {
+        height: 70px;
+        /* Smaller header */
+        padding: 0 15px;
+        /* Less padding */
+        background: var(--bg-card) !important;
+        /* Solid background for readability */
+        backdrop-filter: none;
+        /* Performance & readability */
+    }
+
+    header .container {
+        padding: 0;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+        /* Smaller logo */
+    }
+
+    .mobile-actions {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    nav ul {
+        padding-top: 90px;
+        /* Push down content */
+        background: var(--bg-body);
+        /* Solid bg */
+        width: 100%;
+        /* Full width */
+        max-width: 300px;
+        /* Or limit width */
+        right: 0;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Hide theme toggle inside nav since we moved it out */
+    nav ul li:has(.theme-toggle) {
+        display: none;
+    }
+
+    /* Principal Section */
+    .principal-container {
+        padding: 20px;
+        /* Less padding */
+        flex-direction: column;
+        /* Stack */
+        text-align: center;
+    }
+
+    .principal-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .principal-content h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Hero */
+    .hero-section {
+        padding-top: 100px;
+        /* Account for fixed header */
+        background-attachment: scroll;
+        /* Fix background jitter on mobile */
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        /* Stack images */
+    }
+
+    /* Section Padding */
+    .section-padding {
+        padding: 60px 0;
+        /* Less vertical spacing */
+    }
+}
+
+/* Utility to hide/show specific elements */
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-actions {
+        display: none !important;
+    }
+}

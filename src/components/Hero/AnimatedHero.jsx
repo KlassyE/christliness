@@ -7,20 +7,21 @@ const AnimatedHero = () => {
         <section className="hero-section">
             <div className="container text-center">
                 <motion.div
+                    className="hero-content"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h1 style={{ marginBottom: '20px', color: 'var(--text-heading)' }}>
+                    <h1>
                         Welcome to <span style={{ color: 'var(--accent-primary)' }}>Christliness</span>
                     </h1>
                 </motion.div>
 
                 <motion.p
+                    className="hero-description"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5, duration: 0.8 }}
-                    style={{ fontSize: '1.5rem', maxWidth: '800px', margin: '0 auto 40px auto' }}
                 >
                     Where Academic Excellence Meets Spiritual Growth.
                     <br />

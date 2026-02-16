@@ -20,29 +20,20 @@ const Home = () => {
             <section className="section-padding" style={{ position: 'relative' }}>
                 <div className="container">
                     <motion.div
-                        className="glass-panel"
+                        className="glass-panel principal-container"
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        style={{ padding: '40px', display: 'flex', gap: '40px', alignItems: 'center', flexWrap: 'wrap' }}
                     >
-                        <div style={{ flex: '1 1 300px' }}>
+                        <div className="principal-image-wrapper">
                             <img
                                 src={ruthImg}
                                 alt="Principal Kabagambe Ruth"
-                                style={{
-                                    borderRadius: '50%',
-                                    border: '5px solid var(--accent-primary)',
-                                    boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
-                                    width: '250px',
-                                    height: '250px',
-                                    objectFit: 'cover',
-                                    margin: '0 auto'
-                                }}
+                                className="principal-image"
                             />
                         </div>
-                        <div style={{ flex: '2 1 400px' }}>
+                        <div className="principal-content">
                             <h2 style={{ color: 'var(--accent-primary)', marginBottom: '20px' }}>A Message from Our Principal</h2>
                             <h3 style={{ marginBottom: '10px', color: 'var(--text-heading)' }}>Kabagambe Ruth</h3>
                             <p style={{ color: 'var(--text-body)' }}>
@@ -109,7 +100,7 @@ const Home = () => {
             <section className="section-padding">
                 <div className="container">
                     <h2 className="text-center" style={{ marginBottom: '40px' }}>Life at Christliness</h2>
-                    <div className="grid-4">
+                    <div className="gallery-grid">
                         {[studySpaceImg, bdayImg, spaceImg, princeImg].map((img, index) => (
                             <motion.div
                                 key={index}
