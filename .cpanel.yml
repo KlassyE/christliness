@@ -1,0 +1,9 @@
+---
+deployment:
+  tasks:
+    # We assume standard cPanel path structure. 
+    # $USER is usually available, or you might need to replace it with your actual username.
+    # We copy the CONTENTS of 'dist' to the root of the domain folder.
+    - export DEPLOYPATH=$HOME/public_html/christlinessinternationalschool.com
+    - /bin/cp -R dist/* $DEPLOYPATH
+    - /bin/cp public/deploy.php $DEPLOYPATH

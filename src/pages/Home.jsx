@@ -107,7 +107,16 @@ const Home = () => {
                                 whileHover={{ scale: 1.05, rotate: index % 2 === 0 ? 2 : -2 }}
                                 style={{ overflow: 'hidden', borderRadius: '12px', height: '200px' }}
                             >
-                                <img src={img} alt="School Life" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                <img
+                                    src={img}
+                                    alt="School Life"
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        objectFit: 'cover',
+                                        objectPosition: img === princeImg ? 'top' : 'center'
+                                    }}
+                                />
                             </motion.div>
                         ))}
                     </div>
