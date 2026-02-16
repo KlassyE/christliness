@@ -52,8 +52,8 @@ $commands = [
     'echo $PWD',
     'whoami',
     'git pull origin ' . $branch,
-    // 'npm install',  <-- Removed: We are committing the build now
-    // 'npm run build' <-- Removed: Server functionality only
+    'npm install',
+    'npm run build'
 ];
 
 $output = '';
