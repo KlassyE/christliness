@@ -22,6 +22,12 @@ $logFile = 'deploy.log';
 // EXECUTION
 // -------------------------------------------------------------------------
 
+// If this script is running from the 'dist' folder (because of .htaccess redirect),
+// we need to move up one level to the project root to run git commands.
+if (basename(__DIR__) === 'dist') {
+    chdir('..');
+}
+
 // 1. Get the signature from the headers
 $signature = $_SERVER['HTTP_X_HUB_SIGNATURE_256'] ?? '';
 
@@ -52,8 +58,8 @@ $commands = [
     'echo $PWD',
     'whoami',
     'git pull origin ' . $branch,
-    'npm install',
-    'npm run build'
+    // 'npm install',  <-- Removed: We are committing the build now
+    // 'npm run build' <-- Removed: Server functionality only
 ];
 
 $output = '';
