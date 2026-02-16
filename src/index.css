@@ -497,11 +497,15 @@ header {
 
     header .container {
         padding: 0;
+        justify-content: flex-start;
+        /* Disable space-between to allow manually pushing elements */
     }
 
     .logo {
         font-size: 1.2rem;
         /* Smaller logo */
+        margin-right: auto;
+        /* Pushes all subsequent flex items (icons) to the far right */
     }
 
     .mobile-actions {
