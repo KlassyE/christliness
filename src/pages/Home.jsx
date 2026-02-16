@@ -29,15 +29,16 @@ const Home = () => {
                         <div className="principal-image-wrapper">
                             <img
                                 src={ruthImg}
-                                alt="Principal Kabagambe Ruth"
+                                alt="Principal Kabagambe Ruth - Christliness International School Uganda"
                                 className="principal-image"
+                                loading="lazy"
                             />
                         </div>
                         <div className="principal-content">
                             <h2 style={{ color: 'var(--accent-primary)', marginBottom: '20px' }}>A Message from Our Principal</h2>
                             <h3 style={{ marginBottom: '10px', color: 'var(--text-heading)' }}>Kabagambe Ruth</h3>
                             <p style={{ color: 'var(--text-body)' }}>
-                                "Welcome to Christliness International School! We are a community dedicated to academic excellence and spiritual growth.
+                                "Welcome to <strong>Christliness International School</strong>! We are the premier Christian international school in Uganda, dedicated to academic excellence and spiritual growth.
                                 We believe every child is a unique gift from God, and our mission is to nurture their talents and character.
                                 Join us as we embark on a journey of faith, learning, and discovery."
                             </p>
@@ -51,7 +52,7 @@ const Home = () => {
             <section className="section-padding">
                 <div className="container">
                     <div className="text-center" style={{ marginBottom: '60px' }}>
-                        <h2>Why Choose Christliness?</h2>
+                        <h2>Why Choose Christliness International School?</h2>
                         <p style={{ maxWidth: '600px', margin: '0 auto' }}>We provide a holistic education that balances the mind, body, and spirit.</p>
                     </div>
 
@@ -109,13 +110,14 @@ const Home = () => {
                             >
                                 <img
                                     src={img}
-                                    alt="School Life"
+                                    alt={`Christliness International School Student Life - ${index + 1}`}
                                     style={{
                                         width: '100%',
                                         height: '100%',
                                         objectFit: 'cover',
                                         objectPosition: img === princeImg ? 'top' : 'center'
                                     }}
+                                    loading="lazy"
                                 />
                             </motion.div>
                         ))}

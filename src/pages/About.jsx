@@ -11,13 +11,7 @@ import classroomImg from '../assets/images/classroom.jpg';
 const About = () => {
     return (
         <div className="about-page">
-            <section className="page-banner" style={{
-                backgroundImage: `linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), url('https://via.placeholder.com/1200x300.png?text=Our+Campus')`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                padding: '120px 0',
-                textAlign: 'center'
-            }}>
+            <section className="page-hero">
                 <div className="container">
                     <motion.h2
                         initial={{ opacity: 0, y: -20 }}

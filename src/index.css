@@ -313,6 +313,22 @@ nav a.active {
     transition: background-image 0.3s ease;
 }
 
+.page-hero {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 80px;
+    position: relative;
+    background-image: var(--hero-overlay), url('./assets/images/learning.jpg');
+    /* Default sub-page bg */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
 /* --- Fun Zone (Game) --- */
 .game-board {
     background: var(--bg-element);
