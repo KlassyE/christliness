@@ -2,16 +2,18 @@
     RewriteEngine On
     RewriteBase /
 
-    # 1. Allow access to existing files in root (like robots.txt)
+    # 2. explicit Asset Handling
+    RewriteRule ^assets/(.*)$ dist/assets/$1 [L,QSA]
+
+    # 3. Allow access to existing files in root...
+    # BUT EXCLUDE the source index.html and src/ folder!
+    # We want to serve these from 'dist/' instead.
+    RewriteCond %{REQUEST_URI} !^/index\.html$
+    RewriteCond %{REQUEST_URI} !^/src/
     RewriteCond %{REQUEST_FILENAME} -f [OR]
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteRule ^ - [L]
 
-    # 2. Rewrite root-level asset requests to /dist folder
-    # This catches /assets/index.js and redirects it to /dist/assets/index.js
-    RewriteCond %{REQUEST_URI} !^/dist/
-    RewriteRule ^(assets/.*)$ dist/$1 [L]
-
-    # 3. SPA Fallback: Everything else goes to index.html in dist
+    # 4. SPA Fallback: Everything else goes to index.html in dist
     RewriteRule ^ dist/index.html [L]
 </IfModule>
